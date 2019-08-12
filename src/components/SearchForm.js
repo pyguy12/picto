@@ -1,5 +1,7 @@
 import React from 'react';
 import { withFormik, Form, Field } from 'formik';
+import { connect } from 'react-redux';
+import { searchSubmit } from '../actions';
 
 const SearchForm = () => {
   return (
@@ -20,9 +22,14 @@ const SearchForm = () => {
 const FormikSearchForm = withFormik({
   mapPropsToValues: () => ({ searchQuery: '' }),
 
-  handleSubmit: values => {
-    console.log(values);
+  handleSubmit: (values, { props }) => {
+    props.searchSubmit(values.searchQuery);
   }
 })(SearchForm);
 
-export default FormikSearchForm;
+export default connect(
+  null,
+  {
+    searchSubmit
+  }
+)(FormikSearchForm);
