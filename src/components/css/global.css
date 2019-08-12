@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background: #1c1c1c;
+  padding: 40px 20px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+p {
+  font-weight: 400;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+}
