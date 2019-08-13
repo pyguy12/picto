@@ -9,7 +9,7 @@ export const searchSubmit = searchQuery => {
     });
     dispatch({
       type: 'SEARCH_SUBMIT',
-      payload: response
+      payload: response.data
     });
   };
 };
