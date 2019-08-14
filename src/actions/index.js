@@ -13,3 +13,13 @@ export const searchSubmit = searchQuery => {
     });
   };
 };
+
+export const getFeaturedCollections = () => {
+  return async dispatch => {
+    const response = await unsplash.get('/collections/featured');
+    dispatch({
+      type: 'GET_FEATURED_COLLECTIONS',
+      payload: { featuredCollections: response.data }
+    });
+  };
+};

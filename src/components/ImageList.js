@@ -1,9 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { getFeaturedCollections } from '../actions';
 import './css/ImageList.css';
 
-const ImageList = ({ listName, searchResults, query }) => {
+const ImageList = ({
+  listName,
+  searchResults,
+  query,
+  getFeaturedCollections,
+  featuredCollections
+}) => {
   const renderList = searchResults => {
+    if (
+      listName === 'Featured Collections' &&
+      featuredCollections.length === 0
+    ) {
+      getFeaturedCollections();
+    }
+
     if (!searchResults) {
       return null;
     }
@@ -33,11 +47,17 @@ const ImageList = ({ listName, searchResults, query }) => {
   );
 };
 
-const mapStateToProps = ({ searchResults }) => {
+const mapStateToProps = ({ searchResults, featuredCollections }) => {
   return {
     searchResults: searchResults.response,
-    query: searchResults.query
+    query: searchResults.query,
+    featuredCollections: featuredCollections
   };
 };
 
-export default connect(mapStateToProps)(ImageList);
+export default connect(
+  mapStateToProps,
+  {
+    getFeaturedCollections
+  }
+)(ImageList);
