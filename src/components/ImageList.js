@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const ImageList = ({ listName, searchResults }) => {
+const ImageList = ({ listName, searchResults, query }) => {
+  console.log(query);
   const renderList = searchResults => {
     if (!searchResults) {
       return null;
@@ -20,16 +21,18 @@ const ImageList = ({ listName, searchResults }) => {
 
   return (
     <div>
-      <h1 className="list-name">Results for "{listName}"</h1>
+      <h1 className="list-name">
+        {query ? `Results for "${query}"` : listName}
+      </h1>
       {imageList}
     </div>
   );
 };
 
-const mapStateToProps = ({ searchResults, query }) => {
+const mapStateToProps = ({ searchResults }) => {
   return {
     searchResults: searchResults.response,
-    query: query
+    query: searchResults.query
   };
 };
 
