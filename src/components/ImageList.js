@@ -16,11 +16,24 @@ const ImageList = ({
       featuredCollections.length === 0
     ) {
       getFeaturedCollections();
+      return featuredCollections.map(collection => {
+        return (
+          <div key={collection.id} className="image-card-container">
+            <img
+              className="image-card-thumbnail"
+              src={collection.urls.raw + '&w=300&h=190'}
+              alt={collection.alt_description}
+            />
+            <h2 className="collection-name">{collection.title}</h2>
+          </div>
+        );
+      });
     }
 
     if (!searchResults) {
       return null;
     }
+
     return searchResults.map(result => {
       return (
         <div key={result.id} className="image-card-container">
