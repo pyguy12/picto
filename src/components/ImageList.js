@@ -10,7 +10,7 @@ const ImageList = ({ listName, searchResults }) => {
       return (
         <div key={result.id} className="image-card-container">
           <img src={result.urls.thumb} alt={result.alt_description} />
-          <h2 className="image-card-user-name">{result.user.name}</h2>
+          <h2 className="image-card-user-name">by {result.user.name}</h2>
         </div>
       );
     });
@@ -20,14 +20,17 @@ const ImageList = ({ listName, searchResults }) => {
 
   return (
     <div>
-      <h1 className="list-name">{listName}</h1>
+      <h1 className="list-name">Results for "{listName}"</h1>
       {imageList}
     </div>
   );
 };
 
-const mapStateToProps = state => {
-  return { searchResults: state.searchResults.results };
+const mapStateToProps = ({ searchResults, query }) => {
+  return {
+    searchResults: searchResults.response,
+    query: query
+  };
 };
 
 export default connect(mapStateToProps)(ImageList);
