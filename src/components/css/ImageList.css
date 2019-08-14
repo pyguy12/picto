@@ -1,0 +1,19 @@
+.image-list-container {
+  margin-top: 20px;
+}
+
+.image-card-container {
+  margin-top: 25px;
+  width: 100%;
+}
+
+.image-card-thumbnail {
+  border-radius: 10px;
+  width: 330px;
+  height: 240px;
+  margin-bottom: 10px;
+}
+
+.image-card-user-name {
+  color: #9e9e9e;
+}

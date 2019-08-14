@@ -10,14 +10,25 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: white;
   background: #1c1c1c;
-  padding: 40px 20px;
+  padding: 45px 20px 0 20px;
 }
 
 .flex-container {
   display: flex;
 }
 
+h1 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 p {
+  font-size: 12px;
   font-weight: 400;
 }
 
