@@ -11,23 +11,23 @@ const ImageList = ({
   featuredCollections
 }) => {
   const renderList = searchResults => {
-    if (
-      listName === 'Featured Collections' &&
-      featuredCollections.length === 0
-    ) {
-      getFeaturedCollections();
-      return featuredCollections.map(collection => {
-        return (
-          <div key={collection.id} className="image-card-container">
-            <img
-              className="image-card-thumbnail"
-              src={collection.urls.raw + '&w=300&h=190'}
-              alt={collection.alt_description}
-            />
-            <h2 className="collection-name">{collection.title}</h2>
-          </div>
-        );
-      });
+    if (listName === 'Featured Collections') {
+      if (featuredCollections.length === 0) {
+        getFeaturedCollections();
+      } else {
+        return featuredCollections.map(collection => {
+          return (
+            <div key={collection.id} className="image-card-container">
+              <img
+                className="image-card-thumbnail"
+                src={collection.cover_photo.urls.raw + '&w=300&h=190'}
+                alt={collection.alt_description}
+              />
+              <h2 className="collection-name">{collection.title}</h2>
+            </div>
+          );
+        });
+      }
     }
 
     if (!searchResults) {
@@ -53,7 +53,9 @@ const ImageList = ({
   return (
     <div className="image-container-section">
       <h1 className="list-name">
-        {query ? `Results for "${query}"` : listName}
+        {query && listName !== 'Featured Collections'
+          ? `Results for "${query}"`
+          : listName}
       </h1>
       <div className="image-list-container">{imageList}</div>
     </div>
