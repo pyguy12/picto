@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import './css/ImageList.css';
 
 const ImageList = ({ listName, searchResults, query }) => {
-  console.log(query);
   const renderList = searchResults => {
     if (!searchResults) {
       return null;
@@ -13,7 +12,7 @@ const ImageList = ({ listName, searchResults, query }) => {
         <div key={result.id} className="image-card-container">
           <img
             className="image-card-thumbnail"
-            src={result.urls.thumb + '&w=330'}
+            src={result.urls.raw + '&w=300&h=190'}
             alt={result.alt_description}
           />
           <h2 className="image-card-user-name">by {result.user.name}</h2>
@@ -25,11 +24,11 @@ const ImageList = ({ listName, searchResults, query }) => {
   const imageList = renderList(searchResults);
 
   return (
-    <div className="image-list-container">
+    <div className="image-container-section">
       <h1 className="list-name">
         {query ? `Results for "${query}"` : listName}
       </h1>
-      {imageList}
+      <div className="image-list-container">{imageList}</div>
     </div>
   );
 };

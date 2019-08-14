@@ -8,6 +8,7 @@ const App = () => {
     <div>
       <SearchBar />
       <ImageList listName="New Images" />
+      <ImageList listName="Featured Collections" />
     </div>
   );
 };
