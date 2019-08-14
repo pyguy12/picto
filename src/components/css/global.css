@@ -10,10 +10,11 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: white;
   background: #1c1c1c;
-  padding: 45px 20px 0 20px;
+  padding: 45px 0 0 0;
 }
 
 .flex-container {
+  padding: 0 20px 0 20px;
   display: flex;
 }
 
