@@ -3,13 +3,7 @@ import { connect } from 'react-redux';
 import { getFeaturedCollections } from '../actions';
 import './css/ImageList.css';
 
-const ImageList = ({
-  listName,
-  searchResults,
-  query,
-  getFeaturedCollections,
-  featuredCollections
-}) => {
+const ImageList = ({ searchResults, query }) => {
   const renderList = searchResults => {
     if (!searchResults) {
       return null;
