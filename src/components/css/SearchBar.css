@@ -20,8 +20,8 @@
 }
 
 .search-button {
-  background: #1c1c1c;
+  background: white;
   border: none;
-  color: white;
+  color: #111;
   margin-left: 30px;
 }
