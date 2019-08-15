@@ -11,25 +11,6 @@ const ImageList = ({
   featuredCollections
 }) => {
   const renderList = searchResults => {
-    if (listName === 'Featured Collections') {
-      if (featuredCollections.length === 0) {
-        getFeaturedCollections();
-      } else {
-        return featuredCollections.map(collection => {
-          return (
-            <div key={collection.id} className="image-card-container">
-              <img
-                className="image-card-thumbnail"
-                src={collection.cover_photo.urls.raw + '&w=300&h=190'}
-                alt={collection.alt_description}
-              />
-              <h2 className="collection-name">{collection.title}</h2>
-            </div>
-          );
-        });
-      }
-    }
-
     if (!searchResults) {
       return null;
     }
@@ -37,12 +18,19 @@ const ImageList = ({
     return searchResults.map(result => {
       return (
         <div key={result.id} className="image-card-container">
+          <div className="image-card-user-container">
+            <img
+              src={result.user.profile_image.small}
+              alt="Profile"
+              className="image-card-profile-picture"
+            />
+            <h2 className="image-card-user-name">{result.user.name}</h2>
+          </div>
           <img
             className="image-card-thumbnail"
-            src={result.urls.raw + '&w=300&h=190'}
+            src={result.urls.raw + '&h=300'}
             alt={result.alt_description}
           />
-          <h2 className="image-card-user-name">by {result.user.name}</h2>
         </div>
       );
     });
@@ -52,11 +40,7 @@ const ImageList = ({
 
   return (
     <div className="image-container-section">
-      <h1 className="list-name">
-        {query && listName !== 'Featured Collections'
-          ? `Results for "${query}"`
-          : listName}
-      </h1>
+      <h1 className="list-name">{query ? `Results for "${query}"` : null}</h1>
       <div className="image-list-container">{imageList}</div>
     </div>
   );
