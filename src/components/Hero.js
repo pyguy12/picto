@@ -1,16 +1,12 @@
 import React from 'react';
-import SearchForm from './SearchForm';
 import './css/Hero.css';
 
-const Hero = () => {
+const Hero = ({ title, description, component }) => {
   return (
     <div className="hero-container">
-      <h1 className="hero-title">Picto</h1>
-      <p className="hero-description">
-        Picto uses Unsplash’s developer API to retrieve images and was built
-        using React. The design for this project was created in Figma.
-      </p>
-      <SearchForm />
+      <h1 className="hero-title">{title}</h1>
+      <p className="hero-description">{description}</p>
+      {component}
     </div>
   );
 };

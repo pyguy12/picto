@@ -12,9 +12,6 @@ const SearchForm = () => {
         placeholder="Search..."
         name="searchQuery"
       />
-      <button className="search-button" type="submit" form="search">
-        <i className="fas fa-search" />
-      </button>
     </Form>
   );
 };
