@@ -1,2 +1,4 @@
 .hero-container {
+  height: 100%;
+  background: url('/src/images/heroImageSmall.jpg');
 }
