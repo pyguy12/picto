@@ -1,0 +1,8 @@
+.search-bar {
+  height: 3rem;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  border: none;
+  color: #5e5e5e;
+}

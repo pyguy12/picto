@@ -2,6 +2,7 @@ import React from 'react';
 import { withFormik, Form, Field } from 'formik';
 import { connect } from 'react-redux';
 import { searchSubmit } from '../actions';
+import './css/SearchForm.css';
 
 const SearchForm = () => {
   return (
