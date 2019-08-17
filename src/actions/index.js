@@ -14,12 +14,12 @@ export const searchSubmit = searchQuery => {
   };
 };
 
-export const getFeaturedCollections = () => {
+export const getNewImages = () => {
   return async dispatch => {
-    const response = await unsplash.get('/collections/featured');
+    const response = await unsplash.get('/photos');
     dispatch({
-      type: 'GET_FEATURED_COLLECTIONS',
-      payload: { featuredCollections: response.data }
+      type: 'GET_NEW_IMAGES',
+      payload: { response: response.data }
     });
   };
 };

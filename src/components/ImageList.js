@@ -1,11 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getFeaturedCollections } from '../actions';
 import ImageCard from './ImageCard';
 import './css/ImageList.css';
 
-const ImageList = ({ searchResults, query }) => {
+const ImageList = ({ searchResults, query, location, newImages, listName }) => {
   const renderList = searchResults => {
+    if (location.pathname === '/' && newImages) {
+      return newImages.map(result => {
+        return (
+          <ImageCard
+            key={result.id}
+            profileImage={result.user.profile_image.small}
+            userName={result.user.name}
+            image={`${result.urls.raw} + '&h=300'`}
+            altDescription={result.alt_description}
+          />
+        );
+      });
+    }
+
     if (!searchResults) {
       return null;
     }
@@ -13,7 +26,7 @@ const ImageList = ({ searchResults, query }) => {
     return searchResults.map(result => {
       return (
         <ImageCard
-          id={result.id}
+          key={result.id}
           profileImage={result.user.profile_image.small}
           userName={result.user.name}
           image={`${result.urls.raw} + '&h=300'`}
@@ -27,23 +40,20 @@ const ImageList = ({ searchResults, query }) => {
 
   return (
     <div className="image-container-section">
-      <h1 className="list-name">{query ? `Results for "${query}"` : null}</h1>
+      <h1 className="list-name">
+        {query ? `Results for "${query}"` : listName}
+      </h1>
       <div className="image-list-container">{imageList}</div>
     </div>
   );
 };
 
-const mapStateToProps = ({ searchResults, featuredCollections }) => {
+const mapStateToProps = ({ searchResults, newImages }) => {
   return {
     searchResults: searchResults.response,
     query: searchResults.query,
-    featuredCollections: featuredCollections
+    newImages: newImages.response
   };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    getFeaturedCollections
-  }
-)(ImageList);
+export default connect(mapStateToProps)(ImageList);

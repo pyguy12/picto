@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ImageCard = ({ id, profileImage, userName, image, altDescription }) => {
+const ImageCard = ({ profileImage, userName, image, altDescription }) => {
   return (
-    <div key={id} className="image-card-container">
+    <div className="image-card-container">
       <div className="image-card-user-container">
         <img
           src={profileImage}
