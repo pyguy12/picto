@@ -1,22 +1,17 @@
 import React from 'react';
-import ImageList from './ImageList';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navbar from './Navbar';
-import SearchForm from './SearchForm';
-import Hero from './Hero';
+import Home from './routes/Home';
 import './css/global.css';
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Hero
-        title="Picto"
-        description="Picto uses Unsplash’s developer API to retrieve images and was built
-        using React."
-        component={<SearchForm />}
-      />
-      <ImageList listName="New Images" />
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+        <Route path="/" exact component={Home} />
+      </div>
+    </Router>
   );
 };
 
