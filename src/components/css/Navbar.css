@@ -7,3 +7,8 @@
 .nav-button {
   font-size: 1.25em;
 }
+
+.nav-link:link,
+.nav-link:visited {
+  color: #111;
+}
