@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { withFormik, Form, Field } from 'formik';
 import { connect } from 'react-redux';
 import { searchSubmit } from '../actions';
@@ -26,9 +27,11 @@ const FormikSearchForm = withFormik({
   }
 })(SearchForm);
 
-export default connect(
-  null,
-  {
-    searchSubmit
-  }
-)(FormikSearchForm);
+export default withRouter(
+  connect(
+    null,
+    {
+      searchSubmit
+    }
+  )(FormikSearchForm)
+);
