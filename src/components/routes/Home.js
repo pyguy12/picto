@@ -9,6 +9,7 @@ const Home = ({ getNewImages, newImages, location }) => {
   if (newImages.length === 0) {
     getNewImages();
   }
+
   return (
     <React.Fragment>
       <Hero

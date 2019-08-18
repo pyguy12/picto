@@ -48,7 +48,8 @@ const ImageList = ({ searchResults, query, location, newImages, listName }) => {
   );
 };
 
-const mapStateToProps = ({ searchResults, newImages }) => {
+const mapStateToProps = ({ searchResults, newImages }, ownProps) => {
+  console.log(ownProps);
   return {
     searchResults: searchResults.response,
     query: searchResults.query,

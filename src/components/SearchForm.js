@@ -22,6 +22,7 @@ const FormikSearchForm = withFormik({
 
   handleSubmit: (values, { props }) => {
     props.searchSubmit(values.searchQuery);
+    props.history.push(`/images/${values.searchQuery}`);
   }
 })(SearchForm);
 
