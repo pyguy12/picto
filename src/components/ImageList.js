@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import ImageCard from './ImageCard';
 import './css/ImageList.css';
 
-const ImageList = ({ searchResults, query, location, newImages, listName }) => {
+const ImageList = ({ searchResults, query, path, newImages, listName }) => {
   const renderList = searchResults => {
-    if (location.pathname === '/' && newImages) {
+    if (path === '/' && newImages) {
       return newImages.map(result => {
         return (
           <ImageCard
@@ -41,7 +42,7 @@ const ImageList = ({ searchResults, query, location, newImages, listName }) => {
   return (
     <div className="image-container-section">
       <h1 className="list-name">
-        {query ? `Results for "${query}"` : listName}
+        {path !== '/' && query ? `Results for "${query}"` : listName}
       </h1>
       <div className="image-list-container">{imageList}</div>
     </div>
@@ -49,12 +50,12 @@ const ImageList = ({ searchResults, query, location, newImages, listName }) => {
 };
 
 const mapStateToProps = ({ searchResults, newImages }, ownProps) => {
-  console.log(ownProps);
   return {
+    path: ownProps.match.path,
     searchResults: searchResults.response,
     query: searchResults.query,
     newImages: newImages.response
   };
 };
 
-export default connect(mapStateToProps)(ImageList);
+export default withRouter(connect(mapStateToProps)(ImageList));

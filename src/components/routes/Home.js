@@ -18,7 +18,7 @@ const Home = ({ getNewImages, newImages, location }) => {
         using React."
         component={<SearchForm />}
       />
-      <ImageList listName="New Images" location={location} />
+      <ImageList listName="New Images" />
     </React.Fragment>
   );
 };
