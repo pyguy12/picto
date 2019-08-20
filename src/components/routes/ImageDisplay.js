@@ -1,11 +1,16 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import '../css/ImageDisplay.css';
 
 const ImageDisplay = ({ image }) => {
   return (
     <div className="image-display-container">
-      <img src={image.imageSource} alt={image.imageAlt} />
+      <img
+        className="image-single-page"
+        src={image.imageSource}
+        alt={image.imageAlt}
+      />
     </div>
   );
 };
