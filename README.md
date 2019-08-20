@@ -1,3 +1,5 @@
+This project was made using react, redux, react-redux, react-router-dom, redux-thunk, axios and formik.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
