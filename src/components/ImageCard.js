@@ -1,8 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { handleImageClick } from '../actions';
 
-const ImageCard = ({ profileImage, userName, image, altDescription, id }) => {
+const ImageCard = ({
+  profileImage,
+  userName,
+  image,
+  altDescription,
+  id,
+  handleImageClick
+}) => {
   return (
     <Link onClick={() => handleImageClick(image)} to={`/display-image/${id}`}>
       <div className="image-card-container">
@@ -23,4 +31,10 @@ const ImageCard = ({ profileImage, userName, image, altDescription, id }) => {
     </Link>
   );
 };
-export default ImageCard;
+
+export default connect(
+  null,
+  {
+    handleImageClick
+  }
+)(ImageCard);
