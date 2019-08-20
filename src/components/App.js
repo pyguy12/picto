@@ -15,7 +15,7 @@ const App = () => {
         <Route path="/" exact component={Home} />
         <Route path="/mobile-search" component={MobileSearch} />
         <Route path="/images/:id" component={SearchResults} />
-        <Route path="display-image/:id" component={ImageDisplay} />
+        <Route path="/display-image/:id" component={ImageDisplay} />
       </div>
     </Router>
   );

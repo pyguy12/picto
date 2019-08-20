@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ImageCard = ({ profileImage, userName, image, altDescription, key }) => {
+const ImageCard = ({ profileImage, userName, image, altDescription, id }) => {
   return (
-    <Link to="/display-image">
+    <Link to={`/display-image/${id}`}>
       <div className="image-card-container">
         <div className="image-card-user-container">
           <img

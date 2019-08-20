@@ -15,6 +15,7 @@ const ImageList = ({ searchResults, query, path, newImages, listName }) => {
             userName={result.user.name}
             image={`${result.urls.raw} + '&h=300'`}
             altDescription={result.alt_description}
+            id={result.id}
           />
         );
       });
@@ -32,6 +33,7 @@ const ImageList = ({ searchResults, query, path, newImages, listName }) => {
           userName={result.user.name}
           image={`${result.urls.raw} + '&h=300'`}
           altDescription={result.alt_description}
+          id={result.id}
         />
       );
     });
