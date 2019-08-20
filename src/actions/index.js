@@ -23,3 +23,10 @@ export const getNewImages = () => {
     });
   };
 };
+
+export const handleImageClick = imageSource => {
+  return {
+    type: 'IMAGE_CLICKED',
+    payload: imageSource
+  };
+};

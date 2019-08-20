@@ -1,7 +1,8 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-const ImageDisplay = () => {
-  return <div>ImageDisplay</div>;
+const ImageDisplay = props => {
+  return <div className="image-box" />;
 };
 
-export default ImageDisplay;
+export default withRouter(ImageDisplay);
