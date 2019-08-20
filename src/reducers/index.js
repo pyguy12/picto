@@ -6,5 +6,5 @@ import ImageClickedReducer from './ImageClickedReducer';
 export default combineReducers({
   searchResults: SearchFormReducer,
   newImages: NewImagesReducer,
-  imageSource: ImageClickedReducer
+  clickedImage: ImageClickedReducer
 });

@@ -24,9 +24,9 @@ export const getNewImages = () => {
   };
 };
 
-export const handleImageClick = imageSource => {
+export const handleImageClick = (imageSource, imageAlt) => {
   return {
     type: 'IMAGE_CLICKED',
-    payload: imageSource
+    payload: { imageSource: imageSource, imageAlt: imageAlt }
   };
 };

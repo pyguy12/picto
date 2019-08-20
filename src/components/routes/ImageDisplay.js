@@ -1,8 +1,17 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const ImageDisplay = props => {
-  return <div className="image-box" />;
+const ImageDisplay = ({ image }) => {
+  return (
+    <div className="image-display-container">
+      <img src={image.imageSource} alt={image.imageAlt} />
+    </div>
+  );
 };
 
-export default withRouter(ImageDisplay);
+const mapStateToProps = state => {
+  return { image: state.clickedImage };
+};
+
+export default withRouter(connect(mapStateToProps)(ImageDisplay));

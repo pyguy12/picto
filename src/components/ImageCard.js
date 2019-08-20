@@ -12,7 +12,10 @@ const ImageCard = ({
   handleImageClick
 }) => {
   return (
-    <Link onClick={() => handleImageClick(image)} to={`/display-image/${id}`}>
+    <Link
+      onClick={() => handleImageClick(image, altDescription)}
+      to={`/display-image/${id}`}
+    >
       <div className="image-card-container">
         <div className="image-card-user-container">
           <img
