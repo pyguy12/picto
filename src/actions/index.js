@@ -30,3 +30,13 @@ export const handleImageClick = (imageSource, imageAlt) => {
     payload: { imageSource: imageSource, imageAlt: imageAlt }
   };
 };
+
+export const getUserImages = userName => {
+  return async dispatch => {
+    const response = await unsplash.get(`/users/${userName}/photos`);
+    dispatch({
+      type: 'GET_USER_IMAGES',
+      payload: response
+    });
+  };
+};
