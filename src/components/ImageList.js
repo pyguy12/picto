@@ -16,6 +16,7 @@ const ImageList = ({ searchResults, query, path, newImages, listName }) => {
             image={`${result.urls.raw} + '&h=300'`}
             altDescription={result.alt_description}
             id={result.id}
+            user={result.user.username}
           />
         );
       });
