@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import ImageList from '../ImageList';
 import '../css/ImageDisplay.css';
 
 const ImageDisplay = ({ image }) => {
@@ -11,6 +12,7 @@ const ImageDisplay = ({ image }) => {
         src={image.imageSource}
         alt={image.imageAlt}
       />
+      <ImageList listName="User Images" />
     </div>
   );
 };

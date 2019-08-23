@@ -45,7 +45,7 @@ const ImageList = ({ searchResults, query, path, newImages, listName }) => {
   return (
     <div className="image-container-section">
       <h1 className="list-name">
-        {path !== '/' && query ? `Results for "${query}"` : listName}
+        {query && !listName ? `Results for "${query}"` : listName}
       </h1>
       <div className="image-list-container">{imageList}</div>
     </div>
