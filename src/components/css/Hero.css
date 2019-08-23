@@ -23,3 +23,17 @@
 .search-bar {
   background: white;
 }
+
+@media (min-width: 1024px) {
+  .hero-title {
+    margin-top: 5%;
+  }
+
+  .hero-container {
+    height: 600px;
+    padding: 10% 20%;
+    background: url('./images/heroImageLarge.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}
