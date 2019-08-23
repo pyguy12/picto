@@ -38,3 +38,11 @@
   margin-left: 5px;
   color: #9e9e9e;
 }
+
+@media (min-width: 1024px) {
+  .image-list-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+}
