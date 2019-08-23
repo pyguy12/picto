@@ -4,10 +4,33 @@ import { withRouter } from 'react-router-dom';
 import ImageCard from './ImageCard';
 import './css/ImageList.css';
 
-const ImageList = ({ searchResults, query, path, newImages, listName }) => {
+const ImageList = ({
+  searchResults,
+  query,
+  path,
+  newImages,
+  listName,
+  userImages
+}) => {
   const renderList = searchResults => {
     if (path === '/' && newImages) {
       return newImages.map(result => {
+        return (
+          <ImageCard
+            key={result.id}
+            profileImage={result.user.profile_image.small}
+            userName={result.user.name}
+            image={`${result.urls.raw} + '&h=300'`}
+            altDescription={result.alt_description}
+            id={result.id}
+            user={result.user.username}
+          />
+        );
+      });
+    }
+
+    if (userImages && listName) {
+      return userImages.map(result => {
         return (
           <ImageCard
             key={result.id}
@@ -52,12 +75,16 @@ const ImageList = ({ searchResults, query, path, newImages, listName }) => {
   );
 };
 
-const mapStateToProps = ({ searchResults, newImages }, ownProps) => {
+const mapStateToProps = (
+  { searchResults, newImages, userImages },
+  ownProps
+) => {
   return {
     path: ownProps.match.path,
     searchResults: searchResults.response,
     query: searchResults.query,
-    newImages: newImages.response
+    newImages: newImages.response,
+    userImages: userImages.data
   };
 };
 
