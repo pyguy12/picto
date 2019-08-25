@@ -4,7 +4,8 @@ export const searchSubmit = searchQuery => {
   return async dispatch => {
     const response = await unsplash.get('/search/photos', {
       params: {
-        query: searchQuery
+        query: searchQuery,
+        per_page: 15
       }
     });
     dispatch({
@@ -16,7 +17,11 @@ export const searchSubmit = searchQuery => {
 
 export const getNewImages = () => {
   return async dispatch => {
-    const response = await unsplash.get('/photos');
+    const response = await unsplash.get('/photos', {
+      params: {
+        per_page: 15
+      }
+    });
     dispatch({
       type: 'GET_NEW_IMAGES',
       payload: { response: response.data }

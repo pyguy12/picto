@@ -44,6 +44,7 @@
   .image-list-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
     grid-gap: 20px;
   }
 
