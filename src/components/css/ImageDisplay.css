@@ -2,6 +2,6 @@
   margin-top: 20px;
   width: 100%;
   height: auto;
-  max-height: 600px;
-  object-fit: cover;
+  max-height: 800px;
+  object-fit: scale-down;
 }

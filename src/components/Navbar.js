@@ -8,6 +8,7 @@ const Navbar = () => {
       <Link className="nav-link" to="/">
         <i className="fas fa-home nav-button" />
       </Link>
+      <h1>Picto</h1>
       <Link className="nav-link" to="/mobile-search">
         <i className="fas fa-search nav-button" />
       </Link>

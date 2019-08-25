@@ -12,7 +12,7 @@ const ImageDisplay = ({ image }) => {
         src={image.imageSource}
         alt={image.imageAlt}
       />
-      <ImageList listName="More images by this user" />
+      <ImageList listName="Similar images" />
     </div>
   );
 };

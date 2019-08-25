@@ -67,6 +67,7 @@ const ImageList = ({
 
   return (
     <div className="image-container-section">
+      <h1>{listName}</h1>
       <div className="image-list-container">{imageList}</div>
     </div>
   );
