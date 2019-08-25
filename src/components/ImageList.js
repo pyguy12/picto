@@ -67,9 +67,6 @@ const ImageList = ({
 
   return (
     <div className="image-container-section">
-      <h1 className="list-name">
-        {query && !listName ? `Results for "${query}"` : listName}
-      </h1>
       <div className="image-list-container">{imageList}</div>
     </div>
   );
