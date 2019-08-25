@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Hero from '../Hero';
 import SearchForm from '../SearchForm';
@@ -9,6 +9,10 @@ const Home = ({ getNewImages, newImages, location }) => {
   if (newImages.length === 0) {
     getNewImages();
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <React.Fragment>
