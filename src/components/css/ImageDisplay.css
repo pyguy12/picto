@@ -1,7 +1,12 @@
 .image-single-page {
-  margin-top: 20px;
   width: 100%;
   height: auto;
   max-height: 800px;
   object-fit: scale-down;
+}
+
+@media (min-width: 1024px) {
+  .image-single-page {
+    margin-top: 20px;
+  }
 }
