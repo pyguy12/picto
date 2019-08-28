@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/picto/static/css/main.069b505e.chunk.css",
+    "main.css": "/picto/static/css/main.104ae2a2.chunk.css",
     "main.js": "/picto/static/js/main.3e24f11a.chunk.js",
     "main.js.map": "/picto/static/js/main.3e24f11a.chunk.js.map",
     "runtime~main.js": "/picto/static/js/runtime~main.26a36ade.js",
@@ -8,9 +8,9 @@
     "static/js/2.d0a44041.chunk.js": "/picto/static/js/2.d0a44041.chunk.js",
     "static/js/2.d0a44041.chunk.js.map": "/picto/static/js/2.d0a44041.chunk.js.map",
     "index.html": "/picto/index.html",
-    "precache-manifest.82f46ceb098be439b7b303354f140fc2.js": "/picto/precache-manifest.82f46ceb098be439b7b303354f140fc2.js",
+    "precache-manifest.0a84027721004ff1f9db310f96666945.js": "/picto/precache-manifest.0a84027721004ff1f9db310f96666945.js",
     "service-worker.js": "/picto/service-worker.js",
-    "static/css/main.069b505e.chunk.css.map": "/picto/static/css/main.069b505e.chunk.css.map",
+    "static/css/main.104ae2a2.chunk.css.map": "/picto/static/css/main.104ae2a2.chunk.css.map",
     "static/media/Hero.css": "/picto/static/media/heroImageSmall.09a41c5f.jpg"
   }
 }
