@@ -2,6 +2,10 @@
   margin-top: 20px;
 }
 
+.image-container-section h1 {
+  margin-left: 20px;
+}
+
 .image-list-container {
   margin-top: 20px;
 }
@@ -40,6 +44,10 @@
 
   .image-container-section {
     padding: 0 100px;
+  }
+
+  .image-container-section h1 {
+    margin-left: 0;
   }
 
   .image-card-user-container {
