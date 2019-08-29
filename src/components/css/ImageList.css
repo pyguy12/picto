@@ -59,4 +59,8 @@
     object-fit: cover;
     margin-bottom: 0;
   }
+
+  .image-card-thumbnail:hover + div {
+    background: #111;
+  }
 }

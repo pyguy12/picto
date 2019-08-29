@@ -36,7 +36,7 @@ const ImageList = ({
             key={result.id}
             profileImage={result.user.profile_image.small}
             userName={result.user.name}
-            image={`${result.urls.raw} + '&h=300'`}
+            image={result.urls.regular}
             altDescription={result.alt_description}
             id={result.id}
             user={result.user.username}
@@ -55,7 +55,7 @@ const ImageList = ({
           key={result.id}
           profileImage={result.user.profile_image.small}
           userName={result.user.name}
-          image={`${result.urls.raw} + '&h=300'`}
+          image={result.urls.regular}
           altDescription={result.alt_description}
           id={result.id}
         />
