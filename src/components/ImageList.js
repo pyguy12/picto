@@ -6,7 +6,6 @@ import './css/ImageList.css';
 
 const ImageList = ({
   searchResults,
-  query,
   path,
   newImages,
   listName,

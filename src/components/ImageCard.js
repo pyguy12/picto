@@ -13,6 +13,12 @@ const ImageCard = ({
   getUserImages,
   user
 }) => {
+  let imageSource = '';
+
+  window.innerWidth < 1024
+    ? (imageSource = image.small)
+    : (imageSource = image.regular);
+
   return (
     <Link
       onClick={() => {
@@ -32,7 +38,7 @@ const ImageCard = ({
         </div>
         <img
           className="image-card-thumbnail"
-          src={image.regular}
+          src={imageSource}
           alt={altDescription}
         />
       </div>
