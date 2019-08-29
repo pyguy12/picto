@@ -16,7 +16,7 @@ const ImageCard = ({
   return (
     <Link
       onClick={() => {
-        handleImageClick(image, altDescription);
+        handleImageClick(image.full, altDescription);
         getUserImages(user);
       }}
       to={`/display-image/${id}`}
@@ -32,7 +32,7 @@ const ImageCard = ({
         </div>
         <img
           className="image-card-thumbnail"
-          src={image}
+          src={image.regular}
           alt={altDescription}
         />
       </div>

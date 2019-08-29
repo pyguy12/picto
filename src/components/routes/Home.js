@@ -18,8 +18,7 @@ const Home = ({ getNewImages, newImages, location }) => {
     <React.Fragment>
       <Hero
         title="Picto"
-        description="Picto uses Unsplash’s developer API to retrieve images and was built
-        using React."
+        description="Picto is a React and Redux application. It pulls data from Unsplash's API to provide royalty-free, no-attribuation images."
         component={<SearchForm />}
       />
       <ImageList listName="New Images" />

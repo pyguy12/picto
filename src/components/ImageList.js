@@ -20,7 +20,23 @@ const ImageList = ({
             key={result.id}
             profileImage={result.user.profile_image.small}
             userName={result.user.name}
-            image={result.urls.regular}
+            image={result.urls}
+            altDescription={result.alt_description}
+            id={result.id}
+            user={result.user.username}
+          />
+        );
+      });
+    }
+
+    if (userImages && listName && userImages.length === 0) {
+      return newImages.map(result => {
+        return (
+          <ImageCard
+            key={result.id}
+            profileImage={result.user.profile_image.small}
+            userName={result.user.name}
+            image={result.urls}
             altDescription={result.alt_description}
             id={result.id}
             user={result.user.username}
@@ -36,7 +52,7 @@ const ImageList = ({
             key={result.id}
             profileImage={result.user.profile_image.small}
             userName={result.user.name}
-            image={result.urls.regular}
+            image={result.urls}
             altDescription={result.alt_description}
             id={result.id}
             user={result.user.username}
