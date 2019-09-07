@@ -70,7 +70,7 @@ const ImageList = ({
           key={result.id}
           profileImage={result.user.profile_image.small}
           userName={result.user.name}
-          image={result.urls.regular}
+          image={result.urls}
           altDescription={result.alt_description}
           id={result.id}
         />

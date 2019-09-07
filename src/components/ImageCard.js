@@ -13,6 +13,7 @@ const ImageCard = ({
   getUserImages,
   user
 }) => {
+  console.log(image);
   let imageSource = '';
 
   window.innerWidth < 1024
